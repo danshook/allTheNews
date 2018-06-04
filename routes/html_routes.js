@@ -1,10 +1,10 @@
 var router = require("express").Router();
 
-module.exports = function(app) {
-  app.get("/", function(req, res) {
-    res.render("home");
-  });
-};
+// module.exports = function(app) {
+//   app.get("/", function(req, res) {
+//     res.render("home");
+//   });
+// };
 
 var router = require("express").Router();
 
