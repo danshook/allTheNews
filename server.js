@@ -46,7 +46,7 @@ app.get("/scrape", function(req, res) {
       var $ = cheerio.load(response.data);
 
       // Now, we grab every h2 within an article tag, and do the following:
-      $("resultContent").each(function(i, element) {
+      $("h2.jobTitle").each(function(i, element) {
         // Save an empty result object
         var result = {};
 
@@ -62,13 +62,12 @@ app.get("/scrape", function(req, res) {
         db.Article.create(result)
           .then(function(dbArticle) {
             // View the added result in the console
-            console.log(dbArticle);
+            console.log("dbArticle", dbArticle);
           })
           .catch(function(err) {
             // If an error occurred, send it to the client
             return res.json(err);
           });
-        console.log(err);
       });
 
       // If we were able to successfully scrape and save an Article, send a message to the client
