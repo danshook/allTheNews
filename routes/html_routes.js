@@ -22,16 +22,16 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-    db.Article.find({}).then(stories => {
-      res
-        .render("home", {
+    db.Article.find({})
+      .then(stories => {
+        res.render("home", {
           title: "Home",
           stories: stories
-        })
-        .catch(function(err) {
-          // If an error occurred, send it to the client
-          return res.json(err);
         });
-    });
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        return res.json(err);
+      });
   });
 };

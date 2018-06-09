@@ -10,8 +10,10 @@
     {{#each stories}}
 
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <h4>Tag Line: {{this.tagLine}}</h4>
-        <p>Description: {{this.description}}</p>
+        <h4>Tag Line: {{this.title}}</h4>
+        <p>Description:
+            <a href="https://www.indeed.com/m/{{this.link}}">Link</a>
+        </p>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
